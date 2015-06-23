@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+
+
+.navbar{
+  height:100px;
+  background: #000;
+  position:fixed;
+  top:0px;
+}
