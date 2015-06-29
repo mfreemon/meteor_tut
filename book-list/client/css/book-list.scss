@@ -48,10 +48,33 @@ table {
 }
 
 
-.navbar{
+#navbar{
   height:100px;
   background: #000;
-  position:fixed;
   width: 100%;
-  top:0px;
+}
+
+.mcontainer{
+	margin-top: 100px;
+	width:1300px;
+}
+
+aside{
+	position:relative;
+	float:left;
+	height:1000px;
+	width: 300px;
+	background: blue;
+}
+section{
+	position:relative;
+	float: left;
+	width:1000px;
+}
+
+.book{
+	width: 200px;
+	height:300px;
+	border: solid 1px red;
+	float:left;
 }

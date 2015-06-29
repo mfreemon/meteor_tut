@@ -1,11 +1,14 @@
 
 
 <template name="bookList">
-  <h3> Here are the list of Books:</h3>
-  <ul>
+  <h3> Here are the List of Books:</h3>
+
     {{#each books}}
-    <li><i>{{title}}</i>  by {{author}}</li>
+    <div class ="book">
+      <p><i>{{title}}</i> by {{author}}</p>
+      <p class="price">{{cost}}</p>
+    </div>
     {{/each}}
-  </ul>
+
 
 </template>
