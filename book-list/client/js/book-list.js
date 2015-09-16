@@ -7,13 +7,13 @@ if (Meteor.isClient) {
     'books':function(){
       return Books.find();
     },
-    'selectedBook': function(){
-      var bookId = Books.find();
-      var selectedBook = Session.get('selectedBook');
-      if (bookId == selectedBook){
-        return "selected"
-      }
-    }
+
+    // 'showSelectedBook': function(){
+    //   var selectedBook = Session.get('selectedBook');
+    //   if (selectedBook){
+    //     prompt('you selected' +  selectedBook.name);
+    //   }
+    // }
   });
 
   Template.bookList.events({
@@ -21,8 +21,9 @@ if (Meteor.isClient) {
     'click .get-this': function(){
       var bookId = this._id;
       var bookCost = this.cost;
-      Meteor.call(modifyAmount, bookId, bookCostcost )
-      console.log("a button has been clicked " + bookId);
+      Books.update(bookId, {$inc: {cost: -(bookCost)}});
+      alert ("DId you want to want to purchase "  + this.title)
+      console.log("a button has been clicked  " + bookId);
     }
   })
 }
@@ -30,7 +31,7 @@ if (Meteor.isClient) {
 
 
 if (Meteor.isServer){
-
+  console.log("hello server");
   Meteor.methods({
     'modifyAmount': function(bookId, bookCost){
       // var currentBook = this._id();
