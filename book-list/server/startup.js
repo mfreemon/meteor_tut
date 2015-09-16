@@ -1,6 +1,6 @@
 
 
-
+/*eslint-disable */
 Meteor.startup(function(){
   if(!Books.findOne()){
     Books.insert({title: "To Kill a Mockingbird", author: "Harper Lee", cost: 5.00});
